@@ -30,11 +30,12 @@ To publish on **GitHub Pages**:
 
 ## Photos and map sources
 
-The prototype uses the original maps and street photographs from the earlier Wello website at:
+The original Wello maps and street photographs are **bundled locally** in the `assets/` folder:
 
-`https://wello-accessible-wayfinding.vercel.app/assets/`
+- `floor_b2.png`, `floor_b1.png`, `floor_l1.png`
+- `street_1.png`, `street_2.png`, `street_3.png`, `street_4.png`
 
-This GitHub repository **does not contain local copies of those images**. Keep the previous website online to make sure maps and photos display in Wello Reach. If you later move the images into this repository, update the asset base URL in `index.html`.
+The live GitHub Pages app now loads images from `./assets/`, so it no longer depends on the old Vercel website to display its photos and maps. The originals were retrieved from the earlier Wello deployment owned by the same project.
 
 ## Important safety disclaimer
 
