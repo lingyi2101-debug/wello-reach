@@ -1,55 +1,43 @@
 # Wello Reach — Accessible Wayfinding
 
-**Wello Reach** is an interactive, mobile-friendly navigation *prototype* built for a design project. Its core idea is **“The interface adapts to your reach, not the other way around.”**
+**Wello Reach** is a public, one-page interactive prototype for a Human-Centred Design project.
 
-The app presents a journey from **Dhoby Ghaut MRT or Plaza Singapura Level 1 to the entrance of Temasek Shophouse**. It focuses on how people use their phones while travelling, including handheld and wheelchair-mounted phones.
+**Design statement:** *The interface adapts to your reach, not the other way around.*
 
-## Features
+## What it does
 
-- Two starting locations: Dhoby Ghaut MRT (includes station levels) and Plaza Singapura L1 (skips lower MRT levels).
-- Handheld or wheelchair-mounted phone mode.
-- Left, Centre or Right comfortable-touch area selection.
-- Main navigation button moves to the selected side; the centre mounted mode uses an extra-wide button.
-- Step-by-step image and map directions with Back, Pause, “I'm lost” and Adjust controls. Adjusting the reach zone keeps the current step.
-- Enlarged reference photos/maps, responsive phone layout, visible focus states, keyboard navigation and reduced-motion support.
-- Route A/B comparison intentionally removed from the required flow to reduce unnecessary selections.
+The prototype guides visitors to the **Temasek Shophouse entrance** from two starting points:
 
-## Open locally
+- **Dhoby Ghaut MRT** — includes the MRT B2/B1 indoor reference steps, Plaza Singapura L1 and four outdoor photo steps.
+- **Plaza Singapura Level 1** — skips MRT B2/B1 and starts from Plaza L1, followed by the same four outdoor photo steps.
 
-Open `index.html` in a browser. No build system, dependencies, accounts or API keys required. Use a local HTTP server if your browser restricts local resources, for example:
+The concept focuses on **how people operate a phone during a journey**. Users can choose **Handheld** or **Mounted on chair**, then place the main navigation control at the **Left**, **Centre** or **Right** reach area. The choice remains available through **Adjust** during navigation, without losing the current step. It also offers **Next**, **Back**, **Pause**, **I'm lost?**, enlarged route photos/maps, keyboard controls, visible focus indicators and reduced-motion-friendly CSS.
 
-```bash
-python3 -m http.server 8000
-```
+Route A/B comparison is omitted from the required flow to reduce repeated choices.
 
-then open <http://localhost:8000>.
+## Use
 
-## Publish publicly on GitHub Pages
+This repository has a single self-contained **`index.html`** file containing its HTML, CSS and JavaScript. No build step or dependencies are required.
 
-1. Sign in to GitHub. Create a **new public repository**, such as `wello-reach`.
-2. Upload `index.html`, `styles.css`, `app.js`, and `README.md` to the repository root, then commit.
-3. Open **Settings → Pages** in the repository, set **Source: Deploy from a branch**, **Branch: main**, **Folder: / (root)**, and Save.
-4. Open the URL GitHub Pages displays, normally `https://YOUR_USERNAME.github.io/wello-reach/`.
+To use locally, download and open **`index.html`** in your browser.
 
-> **Note:** The GitHub repository being public does **not** publish a website automatically; GitHub Pages must be enabled separately.
+To publish on **GitHub Pages**:
 
-## Images and route safety
+1. Open this repository on GitHub.
+2. Select **Settings → Pages**.
+3. Under **Build and deployment**, set **Source: Deploy from a branch**, **Branch: main**, **Folder: / (root)**, then **Save**.
+4. When GitHub shows the live website link, open it. For this repository, the expected Pages address is **https://lingyi2101-debug.github.io/wello-reach/**. It will only work after GitHub Pages is enabled and deployment completes.
 
-This code displays the original map illustrations and location photos from the previously published Wello website, through image URLs of the form:
+## Photos and map sources
 
-`https://wello-accessible-wayfinding.vercel.app/assets/street_1.png`
+The prototype uses the original maps and street photographs from the earlier Wello website at:
 
-The assets are **not included in this source archive**; the original Wello deployment must stay available for these images to appear. To make this project fully standalone, download authorized copies of those images into an `assets/` folder and update `ORIGINAL_ASSET_BASE` in `app.js` to `./assets/`.
+`https://wello-accessible-wayfinding.vercel.app/assets/`
 
-**This is a static classroom prototype, not real-time GPS navigation.** It does not track location, confirm current lift availability, or validate ramps, crossings, accessible door clearances or route safety. The route references should be checked on site with wheelchair users before real-world use. The demo asks users to make adjustments while stationary.
+This GitHub repository **does not contain local copies of those images**. Keep the previous website online to make sure maps and photos display in Wello Reach. If you later move the images into this repository, update the asset base URL in `index.html`.
 
-## Files
+## Important safety disclaimer
 
-- `index.html` — page markup and metadata
-- `styles.css` — responsive UI styling and accessible focus states
-- `app.js` — route data, state, controls and screen transitions
-- `README.md` — instructions and limitations
+This is a **classroom prototype**, not a live GPS system. It does not detect your location, verify open lifts, or confirm that ramps, doors, crossings and pavement conditions are currently accessible. Photos and directions are reference material only. Verify all physical route details with wheelchair users on site before real-world navigation.
 
-## Demo flow
-
-Home → Choose start → Choose Handheld or Mounted → Choose Reach zone → Journey overview → Directions (Next / Back / Pause / I'm lost / Adjust) → Arrival.
+**Scope:** Only MRT / Plaza Singapura L1 → Temasek Shophouse entrance, not navigation inside the exhibition.
